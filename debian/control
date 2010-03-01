@@ -1,0 +1,138 @@
+Source: sox
+Homepage: http://sox.sourceforge.net
+Section: sound
+Priority: optional
+Maintainer: Pascal Giard <pascal@debian.org>
+Uploaders: Guenter Geiger (Debian/GNU) <geiger@debian.org>
+Build-Depends: debhelper (>= 7), cdbs, libltdl3-dev, libvorbis-dev, libmad0-dev, libgsm1-dev, libsndfile1-dev (>= 1.0.12), libsamplerate0-dev, libavcodec-dev (>= 0.cvs20070301), libavformat-dev, libavutil-dev, libwavpack-dev, libao-dev, libid3tag0-dev, ladspa-sdk, libpng12-dev, libmagic-dev, libpulse-dev, libasound2-dev [!kfreebsd-i386 !kfreebsd-amd64 !hurd-i386]
+Standards-Version: 3.8.1
+
+Package: sox
+Section: sound
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libsox-fmt-base, libsox-fmt-alsa | libsox-fmt-ao | libsox-fmt-oss
+Suggests: libsox-fmt-all
+Description: Swiss army knife of sound processing
+ SoX is a command line utility that can convert various formats of computer 
+ audio files in to other formats. It can also apply various effects to these 
+ sound files during the conversion. As an added bonus, SoX can play and record 
+ audio files on several unix-style platforms.
+ .
+ SoX is able to handle formats like Ogg Vorbis, MP3, WAV, AIFF, VOC, SND, AU,
+ GSM and several more.
+ Any format support requires at least libsox-fmt-base. Some formats have their
+ own package e.g. mp3 read support is provided by libsox-fmt-mp3.
+ .
+ SoX supports most common sound architectures i.e. Alsa, Libao and OSS
+ (provided by libsox-fmt-alsa, libsox-fmt-ao and libsox-fmt-oss). It also
+ supports LADSPA plugins.
+
+Package: libsox1a
+Architecture: any
+Section: sound
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: libsox-fmt-base, libsox-fmt-alsa | libsox-fmt-ao | libsox-fmt-oss
+Conflicts: libsox0, libsox0a, libsox1
+Suggests: libsox-fmt-all
+Description: SoX library of audio effects and processing
+ SoX is the swiss army knife of sound processing.
+ .
+ This package contains the SoX library which enables to convert various formats
+ of computer audio files in to other formats. It also allows you to apply
+ various effects to sound files.
+ .
+ Any format support requires at least libsox-fmt-base.
+ Sound card I/O requires libsox-fmt-alsa, libsox-fmt-ao or libsox-fmt-oss.
+
+Package: libsox-fmt-base
+Architecture: any
+Section: sound
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Replaces: libsox-fmt-flac, libsox-fmt-gsm, libsox-fmt-libsndfile, libsox-fmt-ogg, libsox-fmt-sndfile
+Description: Minimal set of SoX format libraries
+ SoX is the swiss army knife of sound processing.
+ .
+ This package contains most audio formats libraries supported by SoX.
+ Among them: Ogg Vorbis, WAV, AIFF, VOC, SND, AU, GSM, WavPack, LPC10, FLAC,
+ MATLAB/GNU Octave, Portable Voice Format and Sound Forge Audio Format.
+
+Package: libsox-fmt-alsa
+Architecture: alpha amd64 arm armel hppa i386 ia64 m68k mips mipsel powerpc s390 sparc armeb lpia m32r ppc64 s390x sh3 sh3eb sh4 sh4eb
+Section: sound
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: SoX alsa format I/O library
+ SoX is the swiss army knife of sound processing.
+ .
+ This package contains the SoX alsa format I/O library.
+ .
+ alsa: http://www.alsa-project.org
+
+Package: libsox-fmt-ao
+Architecture: any
+Section: sound
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: SoX Libao format I/O library
+ SoX is the swiss army knife of sound processing.
+ .
+ This package contains the SoX Libao format I/O library.
+ .
+ libao: http://xiph.org/ao
+
+Package: libsox-fmt-ffmpeg
+Architecture: any
+Section: sound
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: SoX ffmpeg format library
+ SoX is the swiss army knife of sound processing.
+ .
+ This package contains the SoX ffmpeg format library.
+ .
+ ffmpeg: http://ffmpeg.sourceforge.net
+
+Package: libsox-fmt-mp3
+Architecture: any
+Section: sound
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: SoX MP3 format library
+ SoX is the swiss army knife of sound processing.
+ .
+ This package contains the SoX MP3 format library.
+ Read support by libmad. Write support not available yet.
+ .
+ libmad: http://www.underbit.com/products/mad/
+
+Package: libsox-fmt-oss
+Architecture: any
+Section: sound
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: SoX OSS format I/O library
+ SoX is the swiss army knife of sound processing.
+ .
+ This package contains the SoX OSS format I/O library.
+
+Package: libsox-fmt-pulse
+Architecture: any
+Section: sound
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: SoX PulseAudio format I/O library
+ SoX is the swiss army knife of sound processing.
+ .
+ This package contains the SoX PulseAudio format I/O library.
+
+Package: libsox-fmt-all
+Architecture: any
+Section: sound
+Depends: ${misc:Depends}, libsox-fmt-base, libsox-fmt-ffmpeg, libsox-fmt-mp3, libsox-fmt-alsa, libsox-fmt-ao, libsox-fmt-oss, libsox-fmt-pulse
+Description: All SoX format libraries
+ SoX is the swiss army knife of sound processing.
+ .
+ This is a metapackage depending on all free SoX format libraries.
+
+Package: libsox-dev
+Architecture: any
+Section: libdevel
+Depends: libsox1a (=${binary:Version}), ${misc:Depends}, libsox-fmt-all (=${binary:Version}), ${shlibs:Depends}
+Description: Development files for the SoX library
+ SoX is the swiss army knife of sound processing.
+ .
+ This package contains the development files for the SoX library.

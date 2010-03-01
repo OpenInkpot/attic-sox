@@ -1,0 +1,1 @@
+shlibs:Depends=libc6 (>= 2.7-1), libsox1 (>= 14.2.0)

@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+# -*- mode: makefile; coding: utf-8 -*-
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/autotools.mk
+
+CFLAGS += -D_REENTRANT
+CPPFLAGS += -I/usr/include/ffmpeg
+DEB_CONFIGURE_EXTRA_FLAGS := --without-lame --with-distro="OpenInkpot GNU/Linux" --with-dyn-default --without-amrwb --without-amrnb --with-alsa --with-oss --without-gsm --without-mp3 --without-lpc10
+# Takes care of postinst-has-useless-call-to-ldconfig for libsox-fmt-*
+DEB_DH_MAKESHLIBS_ARGS := -Xfmt
