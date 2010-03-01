@@ -1,6 +1,6 @@
 Source: sox
 Homepage: http://sox.sourceforge.net
-Section: sound
+Section: core
 Priority: optional
 Maintainer: Alexander V. Nikolaev <avn@daemon.hole.ru>
 Build-Depends: debhelper (>= 7), cdbs, libltdl3-dev, libvorbis-dev, libmad0-dev, libgsm1-dev, libsndfile1-dev (>= 1.0.12), libsamplerate0-dev, libavcodec-dev (>= 0.cvs20070301), libavformat-dev, libavutil-dev, libwavpack-dev, libao-dev, libid3tag0-dev, ladspa-sdk, libpng12-dev, libmagic-dev, libpulse-dev, libasound2-dev [!kfreebsd-i386 !kfreebsd-amd64 !hurd-i386]
@@ -9,7 +9,7 @@ XCS-Cross-Build-Depends: libpng12-dev, libasound2-dev, libmad0-dev
 Standards-Version: 3.8.1
 
 Package: sox
-Section: sound
+Section: core
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Swiss army knife of sound processing
@@ -29,7 +29,7 @@ Description: Swiss army knife of sound processing
 
 Package: libsox1a
 Architecture: any
-Section: sound
+Section: core
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: SoX library of audio effects and processing
  SoX is the swiss army knife of sound processing.
