@@ -1,3 +1,9 @@
+sox (14.3.0-1.2ip) zelazny; urgency=low
+
+  * Upload to IPLinux
+
+ -- Alexander V. Nikolaev <avn@daemon.hole.ru>  Mon, 01 Mar 2010 22:54:16 +0200
+
 sox (14.3.0-1.1) unstable; urgency=low
 
   * Non-maintainer upload.
