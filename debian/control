@@ -50,7 +50,7 @@ Description: Development files for the SoX library
  .
  This package contains the development files for the SoX library.
 
-Package: libsox-dbg
+Package: sox-dbg
 Architecture: any
 Section: debug
 Depends: libsox1a (=${binary:Version}), sox (=${binary:Version})
