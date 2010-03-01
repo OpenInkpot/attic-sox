@@ -50,3 +50,9 @@ Description: Development files for the SoX library
  SoX is the swiss army knife of sound processing.
  .
  This package contains the development files for the SoX library.
+
+Package: libsox-dbg
+Architecture: any
+Section: debug
+Depends: libsox1a (=${binary:Version}), sox (=${binary:Version})
+Description: SoX -- debug symbols
